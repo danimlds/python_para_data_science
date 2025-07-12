@@ -13,31 +13,38 @@ c.execute('''
           vendedor TEXT NOT NULL,
           cidade TEXT NOT NULL
           )''')
+con.commit()
+
+
+c.execute('DELETE FROM vendas')
+con.commit()
 
 # vendas = float(input('Informe o valor das vendas: '))
 # vendedor = input('Informe o nome do vendedor: ')
 # cidade = input('Informe a cidade: ')
-con.execute('''
+c.execute('''
                INSERT INTO vendas 
                (vendas, vendedor, cidade)
-               VALUES ('2000', 'a', 'São Paulo')
+               VALUES (2000, 'a', 'São Paulo')
                ''')
 
-con.execute('''
+c.execute('''
                INSERT INTO vendas 
                (vendas, vendedor, cidade)
-               VALUES ('2000300', 'b', 'Rio de Janeiro')
+               VALUES (2000300, 'b', 'Rio de Janeiro')
                ''')
-con.execute('''
+c.execute('''
                INSERT INTO vendas 
                (vendas, vendedor, cidade)
-               VALUES ('30000', 'c', 'Belo Horizonte')
+               VALUES (30000, 'c', 'Belo Horizonte')
                ''')
-con.execute('''
+c.execute('''
                INSERT INTO vendas 
                (vendas, vendedor, cidade)
-               VALUES ('3000', 'd', 'Curitiba')
+               VALUES (3000, 'd', 'Curitiba')
                ''')
+
+con.commit()
 
 # con.execute('''
 #             INSERT INTO vendas
@@ -45,8 +52,11 @@ con.execute('''
 #             VALUES (?,?,?)
 #             ''', (vendas, vendedor, cidade))
 
-con.execute("SELECT * FROM vendas")
-vendas = c.fetchall()
+# c.execute("SELECT * FROM vendas")
+# vendas = c.fetchall()
+# print(vendas)
+
+
 
 # for venda in vendas:
 #     print(f'''id:{vendas[0]},
@@ -58,20 +68,21 @@ vendas = c.fetchall()
 
 df = pd.read_sql_query('SELECT * FROM vendas', con)
 
-media_de_vendas = df[vendas].mean()
-print(media_de_vendas)
+# media_de_vendas = df[vendas].mean()
+# print(media_de_vendas)
+print(df)
+# print(df.describe())
 
-print(df.describe())
 
-
-csvs = 'dados_exportados_2.csv'
-df.to_csv(csvs)
+# csvs = 'dados_exportados_2.csv'
+# df.to_csv(csvs)
 
 plt.figure(figsize=(10, 5))
 plt.bar(df['vendas'], df['vendedor'], color='skyblue')
 plt.xlabel('vendas')
 plt.ylabel('vendedor')
 plt.title('VENDAS X VENDEDOR')
+plt.tight_layout()
 plt.show()
 
 c.close()
