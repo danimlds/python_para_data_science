@@ -23,23 +23,23 @@ con.commit()
 # vendedor = input('Informe o nome do vendedor: ')
 # cidade = input('Informe a cidade: ')
 c.execute('''
-               INSERT INTO vendas 
+               INSERT INTO vendas
                (vendas, vendedor, cidade)
                VALUES (2000, 'a', 'São Paulo')
                ''')
 
 c.execute('''
-               INSERT INTO vendas 
+               INSERT INTO vendas
                (vendas, vendedor, cidade)
                VALUES (2000300, 'b', 'Rio de Janeiro')
                ''')
 c.execute('''
-               INSERT INTO vendas 
+               INSERT INTO vendas
                (vendas, vendedor, cidade)
                VALUES (30000, 'c', 'Belo Horizonte')
                ''')
 c.execute('''
-               INSERT INTO vendas 
+               INSERT INTO vendas
                (vendas, vendedor, cidade)
                VALUES (3000, 'd', 'Curitiba')
                ''')
