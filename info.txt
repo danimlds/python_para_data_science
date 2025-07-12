@@ -1,0 +1,61 @@
+import pandas as pd
+# from sqlalchemy import create_engine
+# engine = create_engine('sqlite://', echo=False)
+
+
+
+# Importação de dados de um arquivo CSV
+caminho_arquivo = "C:/Users/Aluno/Downloads/saadasd.xlsx"
+dados_vendas = pd.read_excel(caminho_arquivo)
+# print("Dados de Vendas:")
+# print(dados_vendas.head())
+
+
+print(dados_vendas)
+
+
+# Importação de dados de um arquivo Excel
+# caminho_arquivo_excel = 'desempenho_alunos.xlsx'
+# dados_alunos = pd.read_excel(caminho_arquivo_excel)
+# print("/nDados de Alunos:")
+# print(dados_alunos.head())
+
+
+# Exportação de dados para um arquivo CSV
+dados_vendas_para_exportar = pd.DataFrame({
+    'Data': ['2024-01-01', '2024-01-02', '2024-01-03'],
+    'Vendedor': ['Ana', 'Pedro', 'Carla'],
+    'Produto': ['Caneta', 'Lápis', 'Borracha'],
+    'Quantidade': [10, 20, 15],
+    'Valor': [2.5, 1.2, 1.0]
+})
+
+
+arquivo =  'teste63.xml'
+dados_vendas_para_exportar.to_xml(arquivo)
+
+
+
+
+
+# dados_vendas_para_exportar.to_sql(name='Dados.db', con=engine)
+
+
+# with engine.connect() as conn:
+#     conn.execute("SELECT * FROM Dados")
+
+
+
+# dados =  dados_vendas_para_exportar.to_numpy()
+# caminho_arquivo_html_exportado = 'vendas_exportadas.md'
+# dados_vendas.to_numpy(dados_vendas_para_exportar)
+# print(dados)
+
+
+
+# print(teste)
+# print(dados_vendas_para_exportar)
+# Exportação de dados para um arquivo Excel
+# dados_alunos_para_exportar = pd.DataFrame({
+https://seaborn.pydata.org/examples/part_whole_bars.html
+https://www.crummy.com/software/BeautifulSoup/bs4/doc/
